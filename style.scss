@@ -1,4 +1,4 @@
-// Variables
+// Las Variables
 $font-primary: Arial, Helvetica, sans-serif;
 $font-secondary: 'Helvetica Black';
 $color-primary: black;
@@ -12,7 +12,7 @@ $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
 $breakpoint-lg: 1220px;
 
-// Mixins
+// Mixines
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -54,13 +54,13 @@ $breakpoint-lg: 1220px;
   }
 }
 
-// Font Face
+// Fuente
 @font-face {
   font-family: 'Helvetica Black';
   src: url('helveticablackoriginal_bold.otf');
 }
 
-// Base Styles
+// Estilos bases
 html {
   font-size: 16px;
   
@@ -145,7 +145,7 @@ h4 {
   }
 }
 
-// Container
+// Contenedro
 .container {
   width: 100%;
   max-width: 1400px;
@@ -153,7 +153,7 @@ h4 {
   padding: 0 1rem;
 }
 
-// Disposition - Main Grid Layout
+// Grid gral
 .disposition {
   @include grid-layout(1fr, auto auto auto auto auto auto, 
     "header"
@@ -197,7 +197,7 @@ h1 {
   }
 }
 
-// Navigation
+// Navegacino
 nav {
   font-family: $font-primary;
   text-align: center;
@@ -242,7 +242,7 @@ nav {
   grid-area: navegacion;
 }
 
-// Content Areas - Responsive Grids
+// Areas varias
 .latest {
   grid-area: contenido;
   display: grid;
@@ -336,7 +336,7 @@ nav {
   }
 }
 
-// News Items
+
 .news {
   width: 100%;
   height: auto;
@@ -455,7 +455,7 @@ nav {
   }
 }
 
-// Item Grid - Responsive
+// Agregado del Responsive
 .item {
   display: grid;
   margin: 1.5rem 0;
@@ -583,7 +583,7 @@ nav {
   }
 }
 
-// Card
+// tarjetas
 .card {
   h5 {
     font-family: $font-secondary;
@@ -603,7 +603,6 @@ nav {
   }
 }
 
-// Inshort
 .inshort {
   font-family: $font-primary;
   font-size: 1.2rem;
