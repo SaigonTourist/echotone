@@ -5,6 +5,8 @@ $color-primary: black;
 $color-hover: red;
 $color-footer: rgb(152, 152, 152);
 $color-white: white;
+$lge-z-index: 9999; 
+$lge-z-index-under-nav: 999; 
 
 // Breakpoints
 $breakpoint-xs: 480px;
@@ -177,18 +179,22 @@ h4 {
 // Header
 .lgex {
   @include flex-center;
+  left: 45%;
   grid-area: header;
   margin-top: -4.375rem;
   transition: transform 0.5s ease-out;
-  position: relative;
+  position: fixed;
+  z-index: $lge-z-index-under-nav;
   
   @include responsive(xs) {
     margin-top: -3.125rem;
   }
   
-  // Clase para la animación cuando se aplica mediante JS
   &.move-left {
-    transform: translateX(-40%);
+    transform: translatex(-400%);
+  }
+  &.centrar {
+    transform: translateY(200px);
   }
 }
 
@@ -206,9 +212,10 @@ h1 {
 
 // Navigation
 nav {
+  z-index: $lge-z-index;
   font-family: $font-primary;
   text-align: center;
-  padding: 0.5rem 0;
+  padding: 4rem 0;
   
   ul {
     list-style: none;

@@ -1,6 +1,6 @@
 
 function handleScroll() {
-    const lgexElement = document.querySelector('.lgex');
+    const lgex = document.querySelector('.lgex');
     
     
     const scrollHeight = document.documentElement.scrollHeight;
@@ -9,14 +9,19 @@ function handleScroll() {
     const currentScroll = window.scrollY;
     
    
-    // Por ejemplo, cuando hemos desplazado el 90% de la página
-    const scrollThreshold = maxScroll * 0.9;
+    const scrollIniciado = maxScroll * 0.1;
+    const scrollTerminado = maxScroll * 0.9;
+    if (currentScroll >= scrollIniciado) {
+      lgex.classList.add('move-left');
+    } else {
+      lgex.classList.remove('move-left');
+    }
 
-    if (currentScroll >= scrollThreshold) {
-      lgexElement.classList.add('move-left');
+    if (currentScroll >= scrollTerminado) {
+      lgex.classList.add('centrar');
     } else {
     
-      lgexElement.classList.remove('move-left');
+      lgex.classList.remove('centrar');
     }
   }
   
