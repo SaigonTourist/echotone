@@ -8,7 +8,7 @@ $color-white: white;
 $z-index: 1000;
 
 // Breakpoints
-$breakpoint-xs: 480px;
+//$breakpoint-xs: 480px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
 $breakpoint-lg: 1220px;
@@ -64,15 +64,25 @@ $breakpoint-lg: 1220px;
 }
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == xs {
-    @media (max-width: $breakpoint-xs) { @content; }
-  } @else if $breakpoint == sm {
-    @media (min-width: $breakpoint-xs + 1) and (max-width: $breakpoint-sm) { @content; }
-  } @else if $breakpoint == md {
-    @media (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-md) { @content; }
-  } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-md + 1) { @content; }
-  }
+  //@if $breakpoint == xs {
+  //  @media (max-width: $breakpoint-xs) { @content; }
+  //} @else if $breakpoint == sm {
+  //  @media (min-width: $breakpoint-xs + 1) and (max-width: $breakpoint-sm) { @content; }
+  // } @else if $breakpoint == md {
+  //  @media (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-md) { @content; }
+  //} @else if $breakpoint == lg {
+  //  @media (min-width: $breakpoint-md + 1) { @content; }
+  //}
+  @if $breakpoint == sm {
+      @media (max-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+      @media (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-md) { @content; }
+     } @else if $breakpoint == lg {
+      @media (min-width: $breakpoint-md + 1) and (max-width: $breakpoint-lg) { @content; }
+    //} @else if $breakpoint == lg {
+    //  @media (min-width: $breakpoint-md + 1) { @content; }
+    //}
+}
 }
 
 // Font Face
@@ -420,6 +430,13 @@ nav {
 
     h2 {
       top:-100px;
+      @include responsive (xs) {
+      
+        animation-name: ttl-colour;
+        animation-duration: 4s;
+        animation-iteration-count:infinite;
+        
+      }
 
       @include responsive (sm) {
       
@@ -590,7 +607,16 @@ nav {
           margin: 0.625rem;
           margin-top: -100px;
           
-          
+
+          @include responsive(xs) {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-top: -100px;
+            animation-name: ttl-colour;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+
+          }
           @include responsive(sm) {
             text-align: center;
             font-size: 1.3rem;

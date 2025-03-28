@@ -24,11 +24,6 @@
 html {
   font-size: 16px;
 }
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-}
 
 body {
   min-width: 380px;
@@ -71,40 +66,19 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2rem;
 }
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-}
 
 h2 {
   font-size: 1.8rem;
-}
-@media (max-width: 480px) {
-  h2 {
-    font-size: 1.3rem;
-  }
 }
 
 h3 {
   font-size: 1.6rem;
   margin-left: 10%;
 }
-@media (max-width: 480px) {
-  h3 {
-    font-size: 1.2rem;
-    margin-left: 5%;
-  }
-}
 
 h4 {
   font-size: 1.4rem;
   text-align: center;
-}
-@media (max-width: 480px) {
-  h4 {
-    font-size: 1.1rem;
-  }
 }
 
 .container {
@@ -122,7 +96,7 @@ h4 {
   grid-template-areas: "header" "navegacion" "contenido" "contenido2" "contenido3" "footer";
   min-height: 100vh;
 }
-@media (min-width: 993px) {
+@media (min-width: 993px) and (max-width: 1220px) {
   .disposition {
     gap: 3rem;
   }
@@ -145,7 +119,7 @@ h4 {
 .lgex.centrar {
   transform: translateY(650px) translateX(-70px);
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .lgex.move-left {
     transform: translatex(-150%);
   }
@@ -168,12 +142,6 @@ h1 {
   margin-top: 3.125rem;
   margin-bottom: 3.125rem;
 }
-@media (max-width: 480px) {
-  h1 {
-    margin-top: 1.875rem;
-    margin-bottom: 1.875rem;
-  }
-}
 
 nav {
   font-family: Arial, Helvetica, sans-serif;
@@ -188,21 +156,9 @@ nav ul {
   flex-wrap: wrap;
   justify-content: center;
 }
-@media (max-width: 480px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-}
 nav ul li {
   display: inline;
   margin: 0 0.625rem;
-}
-@media (max-width: 480px) {
-  nav ul li {
-    margin: 0.3125rem 0;
-  }
 }
 nav ul li a {
   text-decoration: none;
@@ -222,13 +178,7 @@ nav ul li a:hover {
   grid-area: contenido;
   display: grid;
 }
-@media (max-width: 480px) {
-  .latest {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4);
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .latest {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4);
@@ -240,7 +190,7 @@ nav ul li a:hover {
     grid-template-rows: repeat(2);
   }
 }
-@media (min-width: 993px) {
+@media (min-width: 993px) and (max-width: 1220px) {
   .latest {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 400px);
@@ -251,12 +201,7 @@ nav ul li a:hover {
   display: grid;
   grid-area: contenido2;
 }
-@media (max-width: 480px) {
-  .latest2 {
-    grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .latest2 {
     grid-template-columns: 1fr;
   }
@@ -266,7 +211,7 @@ nav ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 993px) {
+@media (min-width: 993px) and (max-width: 1220px) {
   .latest2 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -280,15 +225,7 @@ nav ul li a:hover {
 .container3 .latest3 {
   display: grid;
 }
-@media (max-width: 480px) {
-  .container3 .latest3 {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
-    gap: 10px;
-    margin-top: 20px;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .container3 .latest3 {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
@@ -304,7 +241,7 @@ nav ul li a:hover {
     margin-top: 20px;
   }
 }
-@media (min-width: 993px) {
+@media (min-width: 993px) and (max-width: 1220px) {
   .container3 .latest3 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -335,16 +272,10 @@ nav ul li a:hover {
   display: block;
   z-index: 1;
 }
-@media (max-width: 480px) {
-  .news .noticia img {
-    object-fit: contain;
-    height: 12.5rem;
-  }
-}
 .news .noticia h2 {
   top: -100px;
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .news .noticia h2 {
     animation-name: ttl-colour;
     animation-duration: 4s;
@@ -357,18 +288,7 @@ nav ul li a:hover {
   text-decoration: none;
   font-weight: bold;
 }
-@media (max-width: 480px) {
-  .news .noticia a {
-    font-size: 1.1rem;
-    position: absolute;
-    top: -1.25rem;
-    z-index: 2;
-    text-align: center;
-    max-width: 90%;
-    color: black;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .news .noticia a {
     font-size: 1.1rem;
     position: absolute;
@@ -391,22 +311,11 @@ nav ul li a:hover {
   margin-top: -100px;
   z-index: 2;
 }
-@media (max-width: 480px) {
-  .news h2 {
-    font-size: 1.2rem;
-  }
-}
 .news a {
   font-size: 1.4rem;
   text-decoration: none;
   color: black;
   font-weight: bold;
-}
-@media (max-width: 480px) {
-  .news a {
-    top: -50px;
-    font-size: 1.1rem;
-  }
 }
 .news a:hover {
   color: red;
@@ -422,15 +331,7 @@ nav ul li a:hover {
   grid-template-rows: 150px;
   grid-template-areas: "linkimg sint";
 }
-@media (max-width: 480px) {
-  .item {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "linkimg" "sint";
-    gap: 50px;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .item {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -453,11 +354,6 @@ nav ul li a:hover {
   object-position: center;
   position: relative;
 }
-@media (max-width: 480px) {
-  .item .img_not {
-    height: 12.5rem;
-  }
-}
 .item .img_not .not-mag img {
   position: relative;
   display: block;
@@ -467,14 +363,7 @@ nav ul li a:hover {
   z-index: 1;
   object-fit: cover;
 }
-@media (max-width: 480px) {
-  .item .img_not .not-mag img {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .item .img_not .not-mag img {
     position: relative;
     width: 100%;
@@ -498,7 +387,7 @@ nav ul li a:hover {
   margin: 0.625rem;
   margin-top: -100px;
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .item .img_not .not-mag h2 {
     text-align: center;
     font-size: 1.3rem;
@@ -525,11 +414,6 @@ nav ul li a:hover {
   align-items: center;
   min-height: 9.375rem;
 }
-@media (max-width: 480px) {
-  .item .sintesis {
-    min-height: 6.25rem;
-  }
-}
 .item .sintesis p {
   display: flex;
   align-items: center;
@@ -538,12 +422,6 @@ nav ul li a:hover {
   font-size: 1rem;
   text-align: left;
   margin: 0 1.25rem;
-}
-@media (max-width: 480px) {
-  .item .sintesis p {
-    font-size: 0.9rem;
-    margin: 0.625rem;
-  }
 }
 
 .card h5 {
@@ -588,7 +466,7 @@ nav ul li a:hover {
   width: 10%;
   max-width: 18.75rem;
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .soundcloud img {
     width: 20%;
   }
@@ -622,11 +500,6 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem 0;
-}
-@media (max-width: 480px) {
-  footer {
-    padding: 0.5rem 0;
-  }
 }
 footer p {
   margin: 0;
