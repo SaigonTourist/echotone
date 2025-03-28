@@ -9,8 +9,8 @@ function handleScroll() {
     const currentScroll = window.scrollY;
     
    
-    const scrollIniciado = maxScroll * 0.1;
-    const scrollTerminado = maxScroll * 0.9;
+    const scrollIniciado = maxScroll * 0.01;
+    const scrollTerminado = maxScroll * 0.95;
     if (currentScroll >= scrollIniciado) {
       lgex.classList.add('move-left');
     } else {
