@@ -183,11 +183,12 @@ h4 {
     "contenido2"
     "contenido3"
     "footer"
+
   );
   min-height: 100vh;
   
   @include responsive(lg) {
-    gap: 1rem;
+    gap: 3rem;
   }
   
 }
@@ -203,15 +204,33 @@ h4 {
   position: fixed;
   z-index: $z-index;
   
-  @include responsive(xs) {
-
-  }
+ 
   
   &.move-left {
     transform: translatex(-500%);
   }
   &.centrar {
-    transform: translateY(0%);
+    transform: translateY(650px) translateX(-70px);
+  }
+  @include responsive(sm) {
+    &.move-left {
+      transform: translatex(-150%);
+    }
+    &.centrar {
+      transform: translateY(650px) translateX(-70px);
+      
+    }
+
+  }
+  @include responsive(md) {
+    &.move-left {
+      transform: translatex(-300%);
+    }
+    &.centrar {
+      transform: translateY(650px) translateX(-70px);
+      
+    }
+
   }
 }
 
@@ -326,28 +345,39 @@ nav {
   grid-area: contenido3;
   justify-content: center;
   
+  
   .latest3 {
     display: grid;
+    
 
     
     @include responsive(xs) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, auto);
+      gap: 10px;
+      margin-top: 20px;
+
     }
     
     @include responsive(sm) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       grid-template-rows: repeat(2, auto);
+      gap: 10px;
+      margin-top: 20px;
     }
     
     @include responsive(md) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, auto);
+      grid-template-rows: 2;
+      gap: 10px;
+      margin-top: 20px;
     }
     
     @include responsive(lg) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, auto);
+      gap:10px;
+      margin-top: 20px;
     }
     
  
@@ -384,10 +414,16 @@ nav {
 
     h2 {
       top:-100px;
-      animation-name: ttl-colour;
-      animation-duration: 4s;
-      animation-iteration-count:infinite;
+
+      @include responsive (sm) {
+      
+        animation-name: ttl-colour;
+        animation-duration: 4s;
+        animation-iteration-count:infinite;
+        
+      }
     }
+
     
     a {
       position: relative;
@@ -399,6 +435,16 @@ nav {
 
       
       @include responsive(xs) {
+        font-size: 1.1rem;
+        position: absolute;
+        top:-1.25rem;
+        z-index: 2;
+        text-align: center;
+        max-width: 90%;
+        color: $color-primary;
+        
+      }
+      @include responsive(sm) {
         font-size: 1.1rem;
         position: absolute;
         top:-1.25rem;
@@ -453,14 +499,18 @@ nav {
   display: grid;
   margin: 1.5rem 0;
   width: 100%;
-  gap: 0;
-  
+  gap: 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px;
+  grid-template-areas: "linkimg sint";
+
   @include responsive(xs) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: 
       "linkimg"
       "sint";
+    gap: 50px;
   }
   
   @include responsive(sm) {
@@ -469,6 +519,7 @@ nav {
     grid-template-areas: 
       "linkimg"
       "sint";
+    gap: 0px;
   }
   
   @include responsive(md) {
@@ -477,6 +528,7 @@ nav {
     grid-template-areas: "linkimg sint";
   }
   
+ 
   
   .img_not {
     grid-area: linkimg;
@@ -491,7 +543,7 @@ nav {
     }
     .not-mag{
 
-      a {
+      
 
         
         img {
@@ -503,27 +555,35 @@ nav {
         }
         
         @include responsive(md) {
-          position: absolute;
-          width: 18.75rem;
+          position: relative;
+          width: 100%;
         }
         
         h2 {
-          margin-top: -100px;
+          position:relative;
           font-family: $font-secondary;
           font-style: italic;
           font-size: 1.5rem;
           text-align: right;
-          margin: 0.625rem;
           z-index: 2;
+          margin: 0.625rem;
+          margin-top: -100px;
           
-          @include responsive(xs) {
+          
+          @include responsive(sm) {
             text-align: center;
             font-size: 1.3rem;
-            margin-top: 0.3125rem;
+            margin-top: -100px;
+            animation-name: ttl-colour;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+
           }
           
           @include responsive(md) {
             margin-top: -6.25rem;
+            text-align: center;
+         
           }
           
         }
@@ -532,7 +592,7 @@ nav {
           color: $color-hover;
           text-decoration: underline;
         }
-     }
+     
     }
   }
   
@@ -605,11 +665,22 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h4{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  color: silver;
+
+  }
   
   img {
-    margin-bottom: 1.875rem;
-    width: 80%;
+    margin-bottom:40px;
+    width: 10%;
     max-width: 18.75rem;
+    @include responsive(sm) {
+      width: 20%;
+    }
+    
     
     @include responsive(md) {
       width: 50%;
@@ -622,10 +693,9 @@ nav {
 }
 
 .reproduction {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  display: grid;
+  align-content: center;
+  gap: 0px;
 }
 
 .about {

@@ -7,10 +7,15 @@ function handleScroll() {
     const clientHeight = document.documentElement.clientHeight;
     const maxScroll = scrollHeight - clientHeight;
     const currentScroll = window.scrollY;
+
+
     
    
     const scrollIniciado = maxScroll * 0.01;
     const scrollTerminado = maxScroll * 0.95;
+
+ 
+
     if (currentScroll >= scrollIniciado) {
       lgex.classList.add('move-left');
     } else {
@@ -23,7 +28,10 @@ function handleScroll() {
     
       lgex.classList.remove('centrar');
     }
+  
   }
+  
+
   
 
   window.addEventListener('scroll', handleScroll);
