@@ -31,6 +31,9 @@ html {
 }
 
 body {
+  min-width: 380px;
+  overflow-x: hidden;
+  transform: scale(1);
   position: relative;
   width: 100%;
   height: 100%;
@@ -188,7 +191,8 @@ nav ul {
 @media (max-width: 480px) {
   nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 10px;
   }
 }
 nav ul li {
@@ -325,6 +329,7 @@ nav ul li a:hover {
 }
 .news .noticia img {
   width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -332,6 +337,7 @@ nav ul li a:hover {
 }
 @media (max-width: 480px) {
   .news .noticia img {
+    object-fit: contain;
     height: 12.5rem;
   }
 }
@@ -455,14 +461,31 @@ nav ul li a:hover {
 .item .img_not .not-mag img {
   position: relative;
   display: block;
+  max-width: 100%;
   width: 100%;
   height: 150px;
   z-index: 1;
+  object-fit: cover;
 }
-@media (min-width: 769px) and (max-width: 992px) {
-  .item .img_not .not-mag {
+@media (max-width: 480px) {
+  .item .img_not .not-mag img {
     position: relative;
     width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .item .img_not .not-mag img {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .item .img_not .not-mag img {
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 }
 .item .img_not .not-mag h2 {
