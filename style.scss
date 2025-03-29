@@ -11,7 +11,7 @@ $z-index: 1000;
 //$breakpoint-xs: 480px;
 $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
-$breakpoint-lg: 1220px;
+$breakpoint-lg: 99999px;
 
 //Keyframes
 
@@ -79,11 +79,9 @@ $breakpoint-lg: 1220px;
       @media (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-md) { @content; }
      } @else if $breakpoint == lg {
       @media (min-width: $breakpoint-md + 1) and (max-width: $breakpoint-lg) { @content; }
-    //} @else if $breakpoint == lg {
-    //  @media (min-width: $breakpoint-md + 1) { @content; }
-    //}
+    } 
 }
-}
+
 
 // Font Face
 @font-face {
@@ -106,7 +104,6 @@ html {
 
 body {
   min-width: 380px;
-  transform: scale(1);
   position:relative;
   width: 100%;
   height: 100%;
@@ -184,6 +181,7 @@ h4 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
+
 }
 
 // Disposition - Main Grid Layout
@@ -198,9 +196,15 @@ h4 {
 
   );
   min-height: 100vh;
-  
+  @include responsive(sm) {
+    gap: 20px;
+  }
+
+    @include responsive(md) {
+    gap: 30px;
+  }
   @include responsive(lg) {
-    gap: 3rem;
+    gap: 30px;
   }
   
 }
@@ -210,8 +214,8 @@ h4 {
   @include flex-center;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 1.25rem;
-  grid-area: header;
+  top: 20px;
+  
   transition: transform 0.5s ease-out;
   position: fixed;
   z-index: $z-index;
@@ -226,11 +230,10 @@ h4 {
   }
   @include responsive(sm) {
     &.move-left {
-      transform: translatex(-50%);
+      transform: translatex(-200px);
     }
     &.centrar {
-      transform: translateY(700px) translateX(-70px);
-      
+      transform: translateY(850px) translateX(-70px);
     }
 
   }
@@ -304,53 +307,61 @@ nav {
 }
 
 // Content Areas - Responsive Grids
-.latest {
+.container1{
+  position: relative;
   grid-area: contenido;
-  display: grid;
-  
-  @include responsive(xs) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4);
+  margin-bottom: 40px;
+  .latest {
+    
+    display: grid;
+    
+    
+    
+    @include responsive(sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4,200px);
+      gap: 10px;
+    }
+    
+    @include responsive(md) {
+      grid-template-columns: repeat(2);
+      grid-template-rows: repeat(2);
+    }
+    
+    @include responsive(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 400px);
+    }
+    
   }
-  
-  @include responsive(sm) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4,200px);
-    gap: 10px;
-  }
-  
-  @include responsive(md) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2);
-  }
-  
-  @include responsive(lg) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 400px);
-  }
-  
 }
 
-.latest2 {
-  display: grid;
+.container2{
+  position: relative;
   grid-area: contenido2;
+  .latest2 {
+    
+
+    display: grid;
   
-  @include responsive(xs) {
-    grid-template-columns: 1fr;
+    
+    @include responsive(xs) {
+      grid-template-columns: 1fr;
+    }
+    
+    @include responsive(sm) {
+      grid-template-columns: 1fr;
+    }
+    
+    @include responsive(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include responsive(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
   }
-  
-  @include responsive(sm) {
-    grid-template-columns: 1fr;
-  }
-  
-  @include responsive(md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @include responsive(lg) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
 }
 
 .container3 {
@@ -399,6 +410,7 @@ nav {
 
 // News Items
 .news {
+  
   width: 100%;
   height: auto;
   position: relative;

@@ -27,7 +27,6 @@ html {
 
 body {
   min-width: 380px;
-  transform: scale(1);
   position: relative;
   width: 100%;
   height: 100%;
@@ -95,9 +94,19 @@ h4 {
   grid-template-areas: "header" "navegacion" "contenido" "contenido2" "contenido3" "footer";
   min-height: 100vh;
 }
-@media (min-width: 993px) and (max-width: 1220px) {
+@media (max-width: 768px) {
   .disposition {
-    gap: 3rem;
+    gap: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .disposition {
+    gap: 30px;
+  }
+}
+@media (min-width: 993px) and (max-width: 99999px) {
+  .disposition {
+    gap: 30px;
   }
 }
 
@@ -106,8 +115,7 @@ h4 {
   justify-content: center;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 1.25rem;
-  grid-area: header;
+  top: 20px;
   transition: transform 0.5s ease-out;
   position: fixed;
   z-index: 1000;
@@ -120,10 +128,10 @@ h4 {
 }
 @media (max-width: 768px) {
   .lgex.move-left {
-    transform: translatex(-50%);
+    transform: translatex(-200px);
   }
   .lgex.centrar {
-    transform: translateY(700px) translateX(-70px);
+    transform: translateY(850px) translateX(-70px);
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
@@ -179,46 +187,53 @@ nav ul li a:hover {
   grid-area: navegacion;
 }
 
-.latest {
+.container1 {
+  position: relative;
   grid-area: contenido;
+  margin-bottom: 40px;
+}
+.container1 .latest {
   display: grid;
 }
 @media (max-width: 768px) {
-  .latest {
+  .container1 .latest {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 200px);
     gap: 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
-  .latest {
-    grid-template-columns: repeat(2, 1fr);
+  .container1 .latest {
+    grid-template-columns: repeat(2);
     grid-template-rows: repeat(2);
   }
 }
-@media (min-width: 993px) and (max-width: 1220px) {
-  .latest {
+@media (min-width: 993px) and (max-width: 99999px) {
+  .container1 .latest {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 400px);
   }
 }
 
-.latest2 {
-  display: grid;
+.container2 {
+  position: relative;
   grid-area: contenido2;
 }
+.container2 .latest2 {
+  display: grid;
+}
 @media (max-width: 768px) {
-  .latest2 {
+  .container2 .latest2 {
     grid-template-columns: 1fr;
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
-  .latest2 {
+  .container2 .latest2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 993px) and (max-width: 1220px) {
-  .latest2 {
+@media (min-width: 993px) and (max-width: 99999px) {
+  .container2 .latest2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -247,7 +262,7 @@ nav ul li a:hover {
     margin-top: 20px;
   }
 }
-@media (min-width: 993px) and (max-width: 1220px) {
+@media (min-width: 993px) and (max-width: 99999px) {
   .container3 .latest3 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
